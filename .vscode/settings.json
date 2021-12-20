@@ -1,0 +1,31 @@
+{
+	"I2SOM_STM32MP1": {
+		/* Target Device Settings */
+		"TARGET_IP":"192.168.1.100",
+
+		/* Project Settings */
+		"PROGRAM":"helloworld",
+
+		/* Yocto SDK Configuration */
+		"ARCH":"arm-openstlinux_eglfs-linux-gnueabi",
+		"GCC_VERSION": "8.2.0",
+		"YOCTOSDK_PATH": "/opt/i2xmp15xbe-qt",
+		"TARGET_SYSROOT": "cortexa7t2hf-neon-vfpv4-openstlinux_eglfs-linux-gnueabi",
+		"HOST_SYSROOT": "x86_64-openstlinux_eglfs_sdk-linux",
+		"OECORE_NATIVE_SYSROOT": "${config:I2SOM_STM32MP1.YOCTOSDK_PATH}/sysroots/${config:I2SOM_STM32MP1.HOST_SYSROOT}",
+		"SDKTARGETSYSROOT": "${config:I2SOM_STM32MP1.YOCTOSDK_PATH}/sysroots/${config:I2SOM_STM32MP1.TARGET_SYSROOT}",
+
+		/* Yocto SDK Constants */
+		"CC_PREFIX": "${config:I2SOM_STM32MP1.OECORE_NATIVE_SYSROOT}/usr/bin/${config:I2SOM_STM32MP1.ARCH}/${config:I2SOM_STM32MP1.ARCH}-",
+		"CXX": "${config:I2SOM_STM32MP1.CC_PREFIX}g++ --sysroot=${config:I2SOM_STM32MP1.SDKTARGETSYSROOT}",
+		"CC": "${config:I2SOM_STM32MP1.CC_PREFIX}gcc --sysroot=${config:I2SOM_STM32MP1.SDKTARGETSYSROOT} -march=armv7ve -mthumb -mfpu=neon-vfpv4 -mfloat-abi=hard -mcpu=cortex-a7",
+	},
+	"files.associations": {
+		"cstdio": "c",
+		"stdio.h": "c",
+		"types.h": "c",
+		"libc-header-start.h": "c",
+		"wordsize.h": "c",
+		"sqlite3.h": "c"
+	}
+}

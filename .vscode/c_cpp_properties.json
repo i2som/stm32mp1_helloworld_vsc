@@ -1,0 +1,26 @@
+{
+	"configurations": [
+	    {
+		"name": "Linux",
+		"includePath": [
+		    "${workspaceFolder}/**",
+		    "${config:I2SOM_STM32MP1.OECORE_NATIVE_SYSROOT}/usr/lib/${config:ARCH}/gcc/${config:ARCH}/${config:GCC_VERSION}/include",
+		    "${config:I2SOM_STM32MP1.SDKTARGETSYSROOT}/usr/include/**"
+		],
+		"browse": {            
+			"path": [
+			    "${workspaceFolder}",
+			    "${config:I2SOM_STM32MP1.OECORE_NATIVE_SYSROOT}/usr/lib/${config:ARCH}/gcc/${config:ARCH}/${config:GCC_VERSION}/include",
+			    "${config:I2SOM_STM32MP1.SDKTARGETSYSROOT}/usr/include/**"
+			],
+			"limitSymbolsToIncludedHeaders": true,  
+			"databaseFilename": ""
+		},
+		"cStandard": "c11",
+		"cppStandard": "c++17",
+		"intelliSenseMode": "gcc-arm",
+		"compilerPath": ""
+	    }
+	],
+	"version": 4
+    }
